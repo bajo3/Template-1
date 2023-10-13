@@ -55,100 +55,148 @@ h3 {
 
 /* Estilos para pantallas grandes */
 
-
-.menu {
-    display: flex;
-    padding: 15x;
-    background: #000000;
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu li {
-    list-style: none;
-    padding: 5px;
-    border-radius: 5px;
-    margin: 0 20px;
-}
-
-.bars__menu {
-    width: 30px;
-    height: 30px;
+.hamburger {
     position: fixed;
+    background-color: transparent;
     right: 0;
-    top: 3%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    height: 30px;
+    width: 30px;
+    padding: 20px 20px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.25s
+      cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition: transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    z-index: 1002;
     cursor: pointer;
-    display: none;
-    background-color: rgba(128, 126, 126, 0);
-    backdrop-filter: blur(10px);
-    padding: 6px;
-    border-radius: 10px;
-}
-
-.bars__menu span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #9a00bf;
-    margin-top: 6px;
-    transform-origin: 0px 100%;
-    transition: all 300ms;
-}
-
-.activeline1__bars-menu {
-    transform: rotate(45deg) translate(-2px, 1px);
-}
-
-.activeline2__bars-menu {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .hamburger.is-active {
+    background-color: none;
+  }
+  ._layer {
+    background: #333333;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    width: 28px;
+    height: 4px;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+    transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  }
+  .hamburger:hover .-top {
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  .hamburger:hover .-bottom {
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  .hamburger.is-active .-top {
+    -webkit-transform: translateY(200%) rotate(45deg) !important;
+    -ms-transform: translateY(200%) rotate(45deg) !important;
+    transform: translateY(200%) rotate(45deg) !important;
+  }
+  .hamburger.is-active .-mid {
     opacity: 0;
-    margin-left: -30px;
-}
-
-.activeline3__bars-menu {
-    transform: rotate(-45deg) translate(-4px, 2px);
-}
-
-.header-landing {
+  }
+  .hamburger.is-active .-bottom {
+    -webkit-transform: translateY(-200%) rotate(135deg) !important;
+    -ms-transform: translateY(-200%) rotate(135deg) !important;
+    transform: translateY(-200%) rotate(135deg) !important;
+  }
+  
+  .menuppal.is_active {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  .menuppal {
     display: flex;
-    justify-content: center;
-    background: #050505;
-    padding: 0.25rem;
-}
-
-.logo-header {
-    max-width: 35px;
-    height: 100%;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.377);
+    backdrop-filter: blur(15px);
+    left: 0;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
     width: 100%;
+    z-index: 1001;
+    height: 40px;
+  }
+  .menuppal ul {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+  }
+
+  .logo{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    font-size: 1.5rem;
+    color: wheat;
+    cursor: pointer;
+  }
+  .menuppal ul li {
+    list-style: none;
+    text-align: center;
+    font-family: Verdadna, Arial, Helvetica;
+    color: green;
+    font-size: 1.5rem;
+    color: #369;
+    text-transform: none;
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  .menuppal ul li a {
+    text-decoration: none;
+    color: #369;
+  }
+  .menuppal ul li a:hover {
+    text-decoration: none;
+    color: #05bfee;
+  }
+  
+ /* Estilos para dispositivos móviles (menú hamburguesa) */
+ @media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .menuppal {
+        display: block;
+        transform: translate3d(0px, -100%, 0px);
+        height: 100%;        bottom: 0;
+        overflow-y: scroll;
+    }
+
+    .menuppal, ul, li{
+flex-direction: column;
+line-height: 5em;
+    }
 }
 
-/* Estilos para hamburguesa en pantallas pequeñas */
-@media (max-width: 768px) {
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .bars__menu {
-        display: block;
-        cursor: pointer;
-
-    }
-
-    .menu {
+/* Estilos para pantallas más grandes (menú normal) */
+@media (min-width: 769px) {
+    .hamburger {
         display: none;
     }
+    .menuppal {
+        transform: translate3d(0px, 0px, 0px);
+    }
 
-    .menu.active {
-        display: flex;
-        flex-direction: column;
+    .menuppal ul li a {
+        font-size: 1rem;
     }
 }
-
-
 
 
 
@@ -209,6 +257,10 @@ h3 {
 
 /** Servicios Section **/
 
+.servicios-section{
+    background: rgb(252, 237, 210);
+}
+
 .wrap-servicios-section {
     display: flex;
     flex-flow: row wrap;
@@ -221,6 +273,7 @@ h3 {
 
 .item-servicios-section p {
     text-align: center;
+    color: rgb(197, 0, 138);
 }
 
 
@@ -230,7 +283,9 @@ h3 {
 }
 
 /** Two Columns Section **/
-
+.caracteristica {
+    background-color: wheat;
+}
 .wrap-two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -246,8 +301,18 @@ h3 {
     flex-flow: column;
 }
 
+
 .wrap-img_two-column img {
     width: 100%;
+}
+
+@media (max-width: 768px){
+    .none  {
+        display: block;
+        flex-direction: row;
+
+      
+    }
 }
 
 .wrap-text-column h3 {
@@ -261,8 +326,12 @@ h3 {
 /** Form Section **/
 
 section.two-column-section.form {
-    background-color: #f2f2f2;
+    background-color: rgb(241, 184, 77);
     padding: 3rem 0;
+}
+
+section.two-column-section.form img {
+    width: 100%;
 }
 
 .form input,

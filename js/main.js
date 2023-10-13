@@ -1,26 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
-const menu = document.querySelector(".bars__menu");
-const menuItems = document.querySelector(".menu");
+    var menu = document.querySelector('.hamburger');
+    var menuppal = document.querySelector(".menuppal");
 
-menu.addEventListener("click",function() {
-    menuItems.classList.toggle("active");
-    animateBars();
-})
-
-
-
-
-    
-    let line1__bars = document.querySelector(".line1__bars-menu");
-    let line2__bars = document.querySelector(".line2__bars-menu");
-    let line3__bars = document.querySelector(".line3__bars-menu");
-
-
-    function animateBars() {
-        line1__bars.classList.toggle("activeline1__bars-menu");
-        line2__bars.classList.toggle("activeline2__bars-menu");
-        line3__bars.classList.toggle("activeline3__bars-menu");
+    function toggleMenu(event) {
+        menu.classList.toggle('is-active');
+        menuppal.classList.toggle("is_active");
+        event.preventDefault();
     }
 
+    function closeMenu(event) {
+        if (menu.classList.contains('is-active')) {
+            toggleMenu(event);
+        }
+    }
 
+    menu.addEventListener('click', toggleMenu, false);
+
+    // Agregar un manejador de eventos a los enlaces del menú
+    var menuLinks = document.querySelectorAll('.menuppal ul li a');
+    menuLinks.forEach(function (link) {
+        link.addEventListener('click', closeMenu, false);
+    });
 });
+    
