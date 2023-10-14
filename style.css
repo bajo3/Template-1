@@ -79,7 +79,7 @@ h3 {
     background-color: none;
   }
   ._layer {
-    background: #333333;
+    background: #00c0da;
     margin-bottom: 4px;
     border-radius: 2px;
     width: 28px;
@@ -150,16 +150,15 @@ h3 {
     list-style: none;
     text-align: center;
     font-family: Verdadna, Arial, Helvetica;
-    color: green;
     font-size: 1.5rem;
-    color: #369;
+    color: #00c0da;
     text-transform: none;
     font-weight: bold;
     margin-right: 15px;
   }
   .menuppal ul li a {
     text-decoration: none;
-    color: #369;
+    color: #00c0da;
   }
   .menuppal ul li a:hover {
     text-decoration: none;
@@ -351,6 +350,30 @@ input[type="submit"] {
     border: 0;
     display: inline;
     cursor: pointer;
+}
+
+.none{
+    display: none;
+}
+
+
+
+@media (max-width: 768px){
+    .section.form  {
+        display: flex;
+        flex-direction: column;
+    }
+    .none{
+        display: block;
+    }
+
+    .show{
+        display: none;
+    }
+
+    .flex{
+        display: flex;
+    }
 }
 
 /** Footer **/
