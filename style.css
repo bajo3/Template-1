@@ -1,6 +1,10 @@
 :root {
-    --main-c: #fdd72d;
+    --main-c: #f5de0f;
+    --nav-c: rgb(243, 194, 103);
+    --burguer-c: rgb(248, 248, 248);
+    --title-c: black;
     --border-r: .2rem;
+    --background-menu-c: rgba(252, 252, 252, 0.336);
 }
 
 /** Estilos Generales **/
@@ -29,7 +33,7 @@ li {
 }
 
 .cta-a {
-    color: #fff;
+    color: var(--title-c);
     font-weight: bold;
     font-size: 1.2rem;
     background-color: var(--main-c);
@@ -79,7 +83,7 @@ h3 {
     background-color: none;
   }
   ._layer {
-    background: #00c0da;
+    background: var(--burguer-c);
     margin-bottom: 4px;
     border-radius: 2px;
     width: 28px;
@@ -119,8 +123,9 @@ h3 {
   }
   .menuppal {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.377);
+    background-color: var(--background-menu-c);
     backdrop-filter: blur(15px);
     left: 0;
     position: fixed;
@@ -129,7 +134,7 @@ h3 {
     transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
     width: 100%;
     z-index: 1001;
-    height: 40px;
+    height: 50px;
   }
   .menuppal ul {
     display: flex;
@@ -143,7 +148,7 @@ h3 {
     align-items: center;
     margin-left: 15px;
     font-size: 1.5rem;
-    color: wheat;
+    color: var(--burguer-c);
     cursor: pointer;
   }
   .menuppal ul li {
@@ -151,18 +156,22 @@ h3 {
     text-align: center;
     font-family: Verdadna, Arial, Helvetica;
     font-size: 1.5rem;
-    color: #00c0da;
+    color: var(--nav-c);
     text-transform: none;
     font-weight: bold;
     margin-right: 15px;
   }
   .menuppal ul li a {
     text-decoration: none;
-    color: #00c0da;
+    color: var(--nav-c);
+    background-color: rgba(12, 12, 12, 0.384);
+    backdrop-filter: blur(15px);
+    padding: 5px;
+    border-radius: 5px;
   }
   .menuppal ul li a:hover {
     text-decoration: none;
-    color: #05bfee;
+    color: #ffffff;
   }
   
  /* Estilos para dispositivos móviles (menú hamburguesa) */
@@ -251,7 +260,12 @@ line-height: 5em;
 .wrap-title-section {
     display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
     margin: 3rem 1rem;
+}
+.wrap-title-section h2{
+    text-align: center;
 }
 
 /** Servicios Section **/
@@ -352,9 +366,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-.none{
-    display: none;
-}
+
 
 
 
