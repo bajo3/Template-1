@@ -16,16 +16,16 @@
     <nav class="menuppal">
       <div class="logo">Estudio Contable</div>
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Quienes Somos</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Categoria</a></li>
+          <li><a href="#caracteristica">Servicios</a></li>
+          <li><a href="#form">Contacto</a></li>
         </ul>
       </nav>
 </header>
     
 
-    <section class="hero-section">
+    <section class="hero-section" id="inicio">
         <div class="wrap-hero-section">
             <h1>Estudio Contable</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta veniam enim neque facere nisi reiciendis. Assumenda voluptate esse unde hic saepe possimus eius nemo modi distinctio! Veritatis inventore ipsa fuga.</p>
@@ -45,7 +45,7 @@
     </div>
 </section>
 
-<section class="section servicios-section">
+<section class="section servicios-section" id="servicios">
     <div class="wrap-title-section">
         <h2>Categorias de servicios</h2>
     </div>
@@ -105,17 +105,18 @@
     </div>
 </section>
 
-<section class="section two-column-section caracteristica">
+<section class="section two-column-section caracteristica" id="caracteristica">
 
     <div class="wrap-title-section">
       <h2>Características de nuestros Servicios</h2>
     </div>
 
-    <div class="wrap-two-column none">
+    <div class="wrap-two-column flex">
       <div class="wrap-img_two-column">
-        <img src="img/14.jpg" alt="">
+        <img class="none" src="img/14.jpg" alt="">
+        <img class="block" src="img/14.jpg" alt="">
+      
       </div>
-
       <div class="wrap-img_two-column">
         <div class="wrap-text-column">
           <h3>Los mejores profesionales</h3>
@@ -123,13 +124,14 @@
           <div class="wrap-cta">
             <a href="/" class="cta-a">Llamada a la acción</a>
           </div>
+          
         </div>
-
       </div>
+
     </div>
   </section>
 
-  <section class="section two-column-section form">
+  <section class="section two-column-section form" id="form">
 
     <div class="wrap-title-section">
       <h2>Formulario de Contacto</h2>
@@ -197,17 +199,7 @@
       </div>
     </div>
 
-    <div class="menu-footer-section">
-      <div class="wrap-menu-footer-section">
-        <ul>
-          <li><a href=""></a>Inicio</li>
-          <li><a href=""></a>Servicios</li>
-          <li><a href=""></a>Quienes Somos</li>
-          <li><a href=""></a>Blog</li>
-          <li><a href=""></a>Contacto</li>
-        </ul>
-      </div>
-    </div>
+    
 
     <div class="menu-footer-section">
       <div class="footer-creds">
